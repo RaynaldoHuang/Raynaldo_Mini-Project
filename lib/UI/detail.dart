@@ -157,40 +157,49 @@ class DetailMobil extends StatelessWidget {
                         )),
                     SizedBox(height: 10),
                     ListTile(
-                      title: Text("2018 Honda BR-V PRESTIGE 1.5",
+                      title: Text("Jenis Bahan Bakar",
                           style: TextStyle(
                             fontSize: 16,
                             color: Color(0xff0d163c),
                             fontWeight: FontWeight.bold,
                           )),
-                      subtitle: Text("85.600 | Automatic | Bekasi"),
+                      subtitle: Text("Bensin"),
                     ),
                     ListTile(
-                      title: Text("2018 Honda BR-V PRESTIGE 1.5",
+                      title: Text("Warna",
                           style: TextStyle(
                             fontSize: 16,
                             color: Color(0xff0d163c),
                             fontWeight: FontWeight.bold,
                           )),
-                      subtitle: Text("85.600 | Automatic | Bekasi"),
+                      subtitle: Text("Putih"),
                     ),
                     ListTile(
-                      title: Text("2018 Honda BR-V PRESTIGE 1.5",
+                      title: Text("Jumlah Tempat Duduk",
                           style: TextStyle(
                             fontSize: 16,
                             color: Color(0xff0d163c),
                             fontWeight: FontWeight.bold,
                           )),
-                      subtitle: Text("85.600 | Automatic | Bekasi"),
+                      subtitle: Text("4"),
                     ),
                     ListTile(
-                      title: Text("2018 Honda BR-V PRESTIGE 1.5",
+                      title: Text("Masa Berlaku STNK",
                           style: TextStyle(
                             fontSize: 16,
                             color: Color(0xff0d163c),
                             fontWeight: FontWeight.bold,
                           )),
-                      subtitle: Text("85.600 | Automatic | Bekasi"),
+                      subtitle: Text("Agustus 2022"),
+                    ),
+                    ListTile(
+                      title: Text("Jarak Tempuh Saat Ini",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff0d163c),
+                            fontWeight: FontWeight.bold,
+                          )),
+                      subtitle: Text("38.000 Km"),
                     ),
                   ],
                 ),

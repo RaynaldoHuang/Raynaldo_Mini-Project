@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miniproject/UI/detailberita.dart';
-import 'package:miniproject/firebase/controller/viewmodel.dart';
-import 'package:miniproject/firebase/model/model.dart';
+import 'package:miniproject/firebase_berita/controller/viewmodel.dart';
+import 'package:miniproject/firebase_berita/model/model.dart';
 
 class ArtikelPage extends StatelessWidget {
   ArtikelPage({super.key});

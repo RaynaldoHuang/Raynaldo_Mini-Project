@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miniproject/firebase/view/artikel.dart';
+import 'package:miniproject/firebase_berita/view/artikel.dart';
 import 'package:miniproject/UI/home/homepage.dart';
 import 'package:miniproject/UI/sellpage.dart';
 

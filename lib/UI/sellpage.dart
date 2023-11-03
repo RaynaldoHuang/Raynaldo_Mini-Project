@@ -2,7 +2,8 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miniproject/firebase/controller/viewmodel.dart';
+import 'package:miniproject/UI/detail.dart';
+import 'package:miniproject/firebase_berita/controller/viewmodel.dart';
 
 // ignore: must_be_immutable
 class SellPage extends StatelessWidget {
@@ -61,105 +62,109 @@ class SellPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      CarouselSlider(
-                          items: listmobil
-                              .map((item) => Image.asset(
-                                    item["image_path"],
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ))
-                              .toList(),
-                          carouselController: carouselController,
-                          options: CarouselOptions(
-                            scrollPhysics: const BouncingScrollPhysics(),
-                            autoPlay: false,
-                            aspectRatio: 1.8,
-                            viewportFraction: 1,
-                            onPageChanged: (index, reason) {
-                              currentIndexmobil.value = index;
-                              // setState(() {
-                              //   currentIndexmobil = index;
-                              // });
-                            },
-                          )),
-                      Positioned(
-                          bottom: 10,
-                          left: 0,
-                          right: 0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: listmobil.asMap().entries.map((entry) {
-                              // ignore: avoid_print
-                              print(entry);
-                              // ignore: avoid_print
-                              print(entry.key);
-                              return GestureDetector(
-                                  onTap: () => carouselController
-                                      .animateToPage(entry.key),
-                                  child: Obx(
-                                    () => Container(
-                                      width:
-                                          // ignore: unrelated_type_equality_checks
-                                          currentIndexmobil == entry.key
-                                              ? 17
-                                              : 7,
-                                      height: 7,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 3),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          // ignore: unrelated_type_equality_checks
-                                          color: currentIndexmobil == entry.key
-                                              ? const Color(0xff0d163c)
-                                              : Colors.white),
-                                    ),
-                                  ));
-                            }).toList(),
-                          ))
-                    ],
-                  ),
-                  const ListTile(
-                    title: Text("2018 Honda BR-V PRESTIGE 1.5",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xff0d163c),
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text("85.600 | Automatic | Bekasi"),
-                    trailing: Icon(Icons.favorite_border),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 16, left: 16, bottom: 16),
-                    child: Column(
+            InkWell(
+              onTap: () => Get.to(DetailMobil()),
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  children: [
+                    Stack(
                       children: [
-                        Align(
-                            alignment: Alignment.topLeft,
-                            child: Text("Rp.181.000.000",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.bold,
-                                ))),
-                        SizedBox(height: 10),
-                        Align(
-                            alignment: Alignment.topLeft,
-                            child: Text("Rp.181.000.000 (Cash)",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                ))),
+                        CarouselSlider(
+                            items: listmobil
+                                .map((item) => Image.asset(
+                                      item["image_path"],
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                    ))
+                                .toList(),
+                            carouselController: carouselController,
+                            options: CarouselOptions(
+                              scrollPhysics: const BouncingScrollPhysics(),
+                              autoPlay: false,
+                              aspectRatio: 1.8,
+                              viewportFraction: 1,
+                              onPageChanged: (index, reason) {
+                                currentIndexmobil.value = index;
+                                // setState(() {
+                                //   currentIndexmobil = index;
+                                // });
+                              },
+                            )),
+                        Positioned(
+                            bottom: 10,
+                            left: 0,
+                            right: 0,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: listmobil.asMap().entries.map((entry) {
+                                // ignore: avoid_print
+                                print(entry);
+                                // ignore: avoid_print
+                                print(entry.key);
+                                return GestureDetector(
+                                    onTap: () => carouselController
+                                        .animateToPage(entry.key),
+                                    child: Obx(
+                                      () => Container(
+                                        width:
+                                            // ignore: unrelated_type_equality_checks
+                                            currentIndexmobil == entry.key
+                                                ? 17
+                                                : 7,
+                                        height: 7,
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 3),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            // ignore: unrelated_type_equality_checks
+                                            color:
+                                                currentIndexmobil == entry.key
+                                                    ? const Color(0xff0d163c)
+                                                    : Colors.white),
+                                      ),
+                                    ));
+                              }).toList(),
+                            ))
                       ],
                     ),
-                  )
-                ],
+                    const ListTile(
+                      title: Text("2018 Honda BR-V PRESTIGE 1.5",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff0d163c),
+                            fontWeight: FontWeight.bold,
+                          )),
+                      subtitle: Text("85.600 | Automatic | Bekasi"),
+                      trailing: Icon(Icons.favorite_border),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 16, left: 16, bottom: 16),
+                      child: Column(
+                        children: [
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Text("Rp.181.000.000",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                  ))),
+                          SizedBox(height: 10),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Text("Rp.181.000.000 (Cash)",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ))),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],

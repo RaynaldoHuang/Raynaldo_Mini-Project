@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:miniproject/firebase/model/model.dart';
+import 'package:miniproject/firebase_berita/model/model.dart';
 
 class NewsViewModel {
   final CollectionReference _newsCollection =

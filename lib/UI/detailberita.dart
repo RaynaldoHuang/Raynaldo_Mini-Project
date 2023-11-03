@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:miniproject/firebase/model/model.dart';
+import 'package:miniproject/firebase_berita/model/model.dart';
 
 class DetailBeritaPage extends StatelessWidget {
   final News news;

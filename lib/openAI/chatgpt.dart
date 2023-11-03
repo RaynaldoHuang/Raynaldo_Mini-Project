@@ -113,7 +113,7 @@ class PromptBldr extends StatelessWidget {
             child: Text(
               responseTxt,
               textAlign: TextAlign.start,
-              style: const TextStyle(fontSize: 25, color: Colors.white),
+              style: const TextStyle(fontSize: 16, color: Colors.white),
             ),
           ),
         ),
@@ -141,7 +141,7 @@ class TextFormFieldBldr extends StatelessWidget {
                 child: TextFormField(
               cursorColor: Colors.white,
               controller: promptController,
-              style: const TextStyle(color: Colors.white, fontSize: 20),
+              style: const TextStyle(color: Colors.white, fontSize: 16),
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
@@ -153,7 +153,7 @@ class TextFormFieldBldr extends StatelessWidget {
                   filled: true,
                   fillColor: const Color(0xff444653),
                   hintText: "Inputkan ciri-ciri mobil yang diinginkan",
-                  hintStyle: const TextStyle(color: Colors.grey)),
+                  hintStyle: const TextStyle(color: Colors.grey, fontSize: 14)),
             )),
             Container(
               color: const Color(0xff19bc99),
