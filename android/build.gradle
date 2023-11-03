@@ -6,6 +6,8 @@ buildscript {
     }
 
     dependencies {
+        // implementation("com.google.firebase:firebase-auth-ktx")
+        // implementation(platform("com.google.firebase:firebase-bom:32.4.1"))
         classpath 'com.android.tools.build:gradle:7.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
